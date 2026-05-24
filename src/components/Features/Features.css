@@ -1,0 +1,113 @@
+.features {
+  background: transparent;
+  padding: var(--spacing-20) 0;
+}
+
+.features__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+  text-align: center;
+}
+
+.features__title {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.features__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-12);
+}
+
+.features__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+  text-align: left;
+}
+
+.features__card {
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.features__card:hover {
+  box-shadow: var(--shadow-purple);
+  transform: translateY(-4px);
+}
+
+.features__card-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--color-bg-card);
+}
+
+/* Desktop: imagen más generosa */
+@media (min-width: 1024px) {
+  .features__card-img-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+.features__card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.features__card:hover .features__card-img {
+  transform: scale(1.04);
+}
+
+.features__card-body {
+  padding: var(--spacing-6);
+}
+
+.features__card-title {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.features__card-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+@media (min-width: 768px) {
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .features__title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-10);
+  }
+
+  .features__card-body {
+    padding: var(--spacing-8);
+  }
+
+  .features__card-title {
+    font-size: var(--font-size-xl);
+  }
+}

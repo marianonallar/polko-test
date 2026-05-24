@@ -1,0 +1,83 @@
+.aseguradoras {
+  background: transparent;
+  padding: var(--spacing-16) 0;
+}
+
+.aseguradoras__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+  text-align: center;
+}
+
+.aseguradoras__title {
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.aseguradoras__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-12);
+}
+
+/* Mobile-first: grilla compacta de 2 columnas */
+.aseguradoras__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: var(--spacing-6) var(--spacing-5);
+  margin: 0 auto;
+}
+
+.aseguradoras__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72px;
+}
+
+.aseguradoras__logo {
+  height: auto;
+  max-height: 40px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.55;
+  transition: filter var(--transition-base), opacity var(--transition-base), transform var(--transition-base);
+}
+
+.aseguradoras__logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Desktop: grilla auto-fit equilibrada */
+@media (min-width: 768px) {
+  .aseguradoras__grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-8);
+    max-width: 720px;
+  }
+
+  .aseguradoras__item {
+    aspect-ratio: 2 / 1;
+    min-height: auto;
+  }
+
+  .aseguradoras__logo {
+    max-height: none;
+    height: 56px;
+    max-width: 140px;
+  }
+}
+
+@media (max-width: 767px) {
+  .aseguradoras__title {
+    font-size: var(--font-size-xl);
+  }
+}
