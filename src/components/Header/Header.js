@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import logo from '../../assets/logos/polko-logo-primary.png';
+import LoginModal from '../LoginModal/LoginModal';
 import './Header.css';
 
 const navLinks = [
@@ -11,8 +12,10 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleNavClick = () => setMenuOpen(false);
+  const openModal = () => { setModalOpen(true); setMenuOpen(false); };
 
   return (
     <header className="header">
@@ -34,9 +37,9 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          <a href="#cotizar" className="btn btn--primary header__cta" onClick={handleNavClick}>
-            Cotizá gratis
-          </a>
+          <button className="btn btn--primary header__cta" onClick={openModal}>
+            Quiero unirme
+          </button>
         </nav>
 
         <button
@@ -51,6 +54,7 @@ export default function Header() {
           <span className={`header__hamburger-bar${menuOpen ? ' header__hamburger-bar--open' : ''}`} />
         </button>
       </div>
+      <LoginModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </header>
   );
 }
