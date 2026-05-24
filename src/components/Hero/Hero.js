@@ -15,10 +15,10 @@ export default function Hero() {
           </p>
           <div className="hero__actions">
             <a href="#funcionalidades" className="btn btn--hero-primary">
-              Conocé la plataforma
-            </a>
-            <a href="#funcionalidades" className="btn btn--secondary">
               Ver funcionalidades
+            </a>
+            <a href="#aseguradoras" className="btn btn--secondary">
+              Aseguradoras integradas
             </a>
           </div>
           <p className="hero__disclaimer">Sin instalaciones. 100% online.</p>
